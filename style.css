@@ -9,13 +9,14 @@
 }
 
 html {
-  overflow: hidden;
   height: 100%;
+  overflow: hidden;
 }
 
 body {
-  background-color: rgb(129, 191, 254);
   height: 100%;
+  overflow: hidden;
+  background-color: rgb(129, 191, 254);
 }
 
 #frame {
@@ -26,6 +27,7 @@ body {
   min-width: 100%;
   min-height: 100%;
   transition: 1s;
+  touch-action: none; /* or affix the menu regardless of zoom */
   /*
   background: url("https://psv4.userapi.com/c520036/u467135438/docs/d1/f299cd7fc4fc/karta_12_khod.png");
   */
@@ -33,8 +35,9 @@ body {
 #map__img {
   cursor: move;
   position: relative;
-  width: 100%;
-  height: auto;
+  width: auto;
+  left: -50%;
+  height: 100%;
 }
 
 #menu {
