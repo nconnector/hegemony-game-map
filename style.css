@@ -10,10 +10,12 @@
 
 html {
   overflow: hidden;
+  height: 100%;
 }
 
 body {
   background-color: rgb(129, 191, 254);
+  height: 100%;
 }
 
 #frame {
@@ -88,8 +90,8 @@ body {
 
 .button.active {
   color: rgba(9, 7, 7, 0.7);
-  border: 1px solid rgba(9, 7, 7, 0.7);
-  background-color: rgb(129, 191, 254);
+  border: 2px solid rgba(9, 7, 7, 0.7);
+  background-color: rgba(129, 191, 254, 0.95);
 }
 
 .move {
