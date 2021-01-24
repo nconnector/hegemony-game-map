@@ -35,14 +35,14 @@ body {
 
 #menu {
   display: grid;
-  grid-gap: 1.5vmin;
-  grid-template-columns: auto 1.5vmin;
+  grid-gap: 1.5vh;
+  grid-template-columns: auto 1.5vh;
   grid-template-rows: auto auto;
 
   position: absolute;
   z-index: 10;
-  top: 3vmin;
-  left: 3vmin;
+  top: 3vh;
+  left: 3vh;
 }
 
 .menu__item,
@@ -54,17 +54,17 @@ body {
 #menu__moves {
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 0.5vmin;
-  grid-template-rows: repeat(20, 3.6vmin);
-  grid-template-columns: 3.6vmin 3.6vmin;
+  grid-gap: 0.5vh;
+  grid-template-rows: repeat(20, 4vh);
+  grid-template-columns: 4vh 4vh;
 }
 
 #menu__settings {
   display: grid;
   grid-auto-flow: row;
-  grid-gap: 0.5vmin;
-  grid-template-columns: 3.6vmin 3.6vmin;
-  grid-template-rows: 3.6vmin;
+  grid-gap: 0.5vh;
+  grid-template-columns: 4vh 4vh;
+  grid-template-rows: 4vh;
 }
 
 #menu__scrollbar {
@@ -77,7 +77,7 @@ body {
   padding-top: 30%;
   text-align: center;
   font-family: "crashnumber", monospace;
-  font-size: 1.5vmin;
+  font-size: 1.5vh;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -96,8 +96,8 @@ body {
 }
 
 .icon {
-  width: 1.5vmin;
-  height: 1.5vmin;
+  width: 1.5vh;
+  height: 1.5vh;
   -webkit-filter: invert(1);
   filter: invert(1);
 }

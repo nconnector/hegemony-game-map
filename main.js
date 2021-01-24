@@ -54,19 +54,19 @@ mapImg.addEventListener('contextmenu', event => event.preventDefault());
 
 let moveID = 1
 let moveIDtoURL = {
-    13: 'https://psv4.userapi.com/c520036/u467135438/docs/d30/3df43ae5d0e4/karta_13_khod.png',
-    12: 'https://psv4.userapi.com/c520036/u467135438/docs/d1/bd6914a79cd8/karta_12_khod.png',
-    11: 'https://psv4.userapi.com/c856420/u467135438/docs/d4/beba5a2c48ae/Karta_11khod.png',
-    10: 'https://psv4.userapi.com/c856336/u467135438/docs/d2/58c6db83707e/Karta_10khod.png',
-    9: 'https://psv4.userapi.com/c536132/u467135438/docs/d21/83914503070a/Karta_9khod.png',
-    8: 'https://psv4.userapi.com/c856420/u467135438/docs/d5/ef2c8952df9f/Karta_8khod.png',
-    7: 'https://psv4.userapi.com/c856220/u467135438/docs/d8/0550b876ff54/Karta_7khod.png',
-    6: 'https://psv4.userapi.com/c532036/u467135438/docs/d35/6a2515204b13/Karta_6khod.png',
-    5: 'https://psv4.userapi.com/c856424/u467135438/docs/d2/718e0914cea8/Karta_5khod.png',
-    4: 'https://psv4.userapi.com/c856428/u467135438/docs/d13/f6400a7f93ba/Karta_4khod.png',
-    3: 'https://psv4.userapi.com/c856536/u467135438/docs/d5/301bb3a695ab/Karta_3khod.png',
-    2: 'https://psv4.userapi.com/c856324/u467135438/docs/d2/095a7a8a83e5/Karta_2khod.png',
-    1: 'https://psv4.userapi.com/c856336/u467135438/docs/d3/f3de76e32df4/Karta_1khod.png',
+    13: 'images/karta_13_khod.png',
+    12: 'images/karta_12_khod.png',
+    11: 'images/Karta_11khod.png',
+    10: 'images/Karta_10khod.png',
+    9: 'images/Karta_9khod.png',
+    8: 'images/Karta_8khod.png',
+    7: 'images/Karta_7khod.png',
+    6: 'images/Karta_6khod.png',
+    5: 'images/Karta_5khod.png',
+    4: 'images/Karta_4khod.png',
+    3: 'images/Karta_3khod.png',
+    2: 'images/Karta_2khod.png',
+    1: 'images/Karta_1khod.png',
 }
 
 
