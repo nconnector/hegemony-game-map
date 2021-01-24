@@ -9,8 +9,7 @@
 }
 
 html {
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -18,28 +17,26 @@ body {
 }
 
 #frame {
-  position: relative;
-  margin: 2%;
-  width: 95%;
-  height: 95%;
+  margin: 1%;
 }
 
 #map {
-  min-width: 100%;
-  min-height: 100%;
+  position: absolute;
+  min-width: 98%;
+  min-height: 98%;
   background: url("https://psv4.userapi.com/c520036/u467135438/docs/d1/f299cd7fc4fc/karta_12_khod.png")
     blue;
 }
 
 #menu {
   display: grid;
-  grid-gap: 5px;
-  grid-template-columns: 405px 15px;
+  grid-gap: 0.5vmin;
+  grid-template-columns: auto 1.5vmin;
   grid-template-rows: auto auto;
 
   position: absolute;
-  bottom: 1.5%;
-  left: 2%;
+  bottom: 0.75rem;
+  left: 0.75rem;
 }
 
 .menu__item,
@@ -50,19 +47,20 @@ body {
 
 #menu__moves {
   display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(10, 36px);
-  grid-template-rows: repeat(3, 36px);
+  grid-gap: 0.5vmin;
+  grid-template-columns: repeat(10, 3.6vmin);
+  grid-template-rows: repeat(3, 3.6vmin);
 }
 
 .move {
-  padding: 10px;
+  padding: 30%;
   text-align: center;
   font-family: "crashnumber", airal;
+  font-size: 1.5vmin;
 }
 
 #menu__settings {
-  height: 150px;
+  height: 15vmin;
 }
 
 #menu__scrollbar {
