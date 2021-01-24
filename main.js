@@ -21,9 +21,8 @@ let y_cursor = 0
 let x_img_ele = 0
 let y_img_ele = 0
 
-function start_drag() {
+function start_drag(event) {
     img_ele = this;
-    console.log(img_ele)
     if (event.type == 'mousedown') {
         x_img_ele = window.event.clientX - mapImg.offsetLeft
         y_img_ele = window.event.clientY - mapImg.offsetTop
@@ -31,7 +30,6 @@ function start_drag() {
         let touch = event.touches[0] || event.changedTouches[0]
         x_img_ele = touch.clientX - mapImg.offsetLeft
         y_img_ele = touch.clientY - mapImg.offsetTop
-        console.log('touchstart',x,y)
     }
 }
 
@@ -39,8 +37,7 @@ function stop_drag() {
     img_ele = null
 }
 
-function while_drag() {
-    console.log(arguments)
+function while_drag(event) {
     if (event.type == 'mousemove') {
         x_cursor = window.event.clientX
         y_cursor = window.event.clientY
@@ -53,7 +50,7 @@ function while_drag() {
         img_ele.style.left = (x_cursor - x_img_ele) + 'px'
         img_ele.style.top = ( y_cursor - y_img_ele) + 'px'
         //track movement in console
-        console.log(img_ele.style.left+' - '+img_ele.style.top)
+        //console.log(img_ele.style.left+' - '+img_ele.style.top)
 
     }
 }
