@@ -76,10 +76,14 @@ function updateURL(event) {
         let newURL = moveIDtoURL[moveID]
         if (newURL) {
             mapImg.src = newURL
+            document.getElementsByClassName('button active')[0].classList.remove('active')
+            event.target.classList.add('active')
+            event.stopPropagation();
+            event.preventDefault();
         } else {
             mapImg.src = ''
         } 
     }}
 
-menuMoves.addEventListener('touchstart', event => { updateURL(event) })
+menuMoves.addEventListener('touchend', event => { updateURL(event) })
 menuMoves.addEventListener('click', event => { updateURL(event) })
