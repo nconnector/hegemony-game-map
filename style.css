@@ -17,26 +17,32 @@ body {
 }
 
 #frame {
-  margin: 1%;
+  position: relative;
 }
 
 #map {
-  position: absolute;
-  min-width: 98%;
-  min-height: 98%;
-  background: url("https://psv4.userapi.com/c520036/u467135438/docs/d1/f299cd7fc4fc/karta_12_khod.png")
-    blue;
+  min-width: 100%;
+  min-height: 100%;
+  transition: 1s;
+  /*
+  background: url("https://psv4.userapi.com/c520036/u467135438/docs/d1/f299cd7fc4fc/karta_12_khod.png");
+  */
+}
+#map__img {
+  cursor: move;
+  position: relative;
 }
 
 #menu {
   display: grid;
-  grid-gap: 0.5vmin;
+  grid-gap: 1.5vmin;
   grid-template-columns: auto 1.5vmin;
   grid-template-rows: auto auto;
 
   position: absolute;
-  bottom: 0.75rem;
-  left: 0.75rem;
+  z-index: 10;
+  top: 3vmin;
+  left: 3vmin;
 }
 
 .menu__item,
@@ -47,23 +53,36 @@ body {
 
 #menu__moves {
   display: grid;
+  grid-auto-flow: column;
   grid-gap: 0.5vmin;
-  grid-template-columns: repeat(10, 3.6vmin);
-  grid-template-rows: repeat(3, 3.6vmin);
+  grid-template-rows: repeat(20, 3.6vmin);
+  grid-template-columns: 3.6vmin 3.6vmin;
+}
+
+#menu__settings {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 0.5vmin;
+  grid-template-columns: 3.6vmin 3.6vmin;
+  grid-template-rows: 3.6vmin;
+}
+
+#menu__scrollbar {
+  visibility: hidden;
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
 }
 
 .move {
-  padding: 30%;
+  padding-top: 30%;
   text-align: center;
   font-family: "crashnumber", airal;
   font-size: 1.5vmin;
 }
 
-#menu__settings {
-  height: 15vmin;
-}
-
-#menu__scrollbar {
-  grid-row: 1 / 3;
-  grid-column: 2 / 3;
+.button {
+  padding-top: 20%;
+  text-align: center;
+  font-family: "crashnumber", airal;
+  font-size: 1.5vmin;
 }
