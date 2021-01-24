@@ -69,7 +69,8 @@ let moveIDtoURL = {
     1: 'https://psv4.userapi.com/c856336/u467135438/docs/d3/f3de76e32df4/Karta_1khod.png',
 }
 
-menuMoves.addEventListener('click', event => {
+
+function updateURL(event) {
     if (event.target.classList.contains('move')) {
         moveID = event.target.innerText
         let newURL = moveIDtoURL[moveID]
@@ -78,4 +79,7 @@ menuMoves.addEventListener('click', event => {
         } else {
             mapImg.src = ''
         } 
-    }})
+    }}
+
+menuMoves.addEventListener('touchstart', event => { updateURL(event) })
+menuMoves.addEventListener('click', event => { updateURL(event) })
