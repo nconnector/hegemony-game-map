@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "crashnumber";
+  src: url(fonts/Crashnumber-bold.ttf) format("truetype");
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: rgb(199, 199, 199);
+}
+
+#frame {
+  position: relative;
+  margin: 2%;
+  width: 95%;
+  height: 95%;
+}
+
+#map {
+  min-width: 100%;
+  min-height: 100%;
+  background: url("https://psv4.userapi.com/c520036/u467135438/docs/d1/f299cd7fc4fc/karta_12_khod.png")
+    blue;
+}
+
+#menu {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 405px 15px;
+  grid-template-rows: auto auto;
+
+  position: absolute;
+  bottom: 1.5%;
+  left: 2%;
+}
+
+.menu__item,
+#menu__moves .move {
+  color: white;
+  background-color: rgba(9, 7, 7, 0.7);
+}
+
+#menu__moves {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(10, 36px);
+  grid-template-rows: repeat(3, 36px);
+}
+
+.move {
+  padding: 10px;
+  text-align: center;
+  font-family: "crashnumber", airal;
+}
+
+#menu__settings {
+  height: 150px;
+}
+
+#menu__scrollbar {
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+}
