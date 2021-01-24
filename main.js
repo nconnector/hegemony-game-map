@@ -36,7 +36,7 @@ function while_drag() {
     if (img_ele !== null) {
         img_ele.style.left = (x_cursor - x_img_ele) + 'px';
         img_ele.style.top = ( window.event.clientY - y_img_ele) + 'px';
-
+        //track movement in console
         //console.log(img_ele.style.left+' - '+img_ele.style.top);
 
     }
