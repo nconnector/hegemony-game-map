@@ -20,6 +20,12 @@ body {
   background-color: rgb(129, 191, 254);
 }
 
+a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
 #frame {
   position: relative;
 }
@@ -71,7 +77,7 @@ body {
   grid-auto-flow: row;
   grid-gap: 0.5vh;
   grid-template-rows: 4vh;
-  grid-template-columns: 4vh 4vh;
+  grid-template-columns: repeat(4, 4vh);
 }
 
 #menu__scrollbar {
@@ -100,18 +106,18 @@ body {
   background-color: rgba(129, 191, 254, 0.95);
 }
 
+/*
 .no-padding {
   padding: 0;
 }
 
 .icon {
-  /* icon inside the menu tile TODO: change icon */
   padding: 25%;
   width: 2vh;
   height: 2vh;
   -webkit-filter: invert(1);
   filter: invert(1);
-}
+}*/
 
 @media only screen and (max-width: 768px) {
   #menu {
@@ -129,13 +135,13 @@ body {
   #menu__settings {
     grid-gap: calc(var(--vh) * 0.5);
     grid-template-rows: calc(var(--vh) * 4);
-    grid-template-columns: calc(var(--vh) * 4) calc(var(--vh) * 4);
+    grid-template-columns: repeat(4, calc(var(--vh) * 4));
   }
   .button {
     font-size: calc(var(--vh) * 1.5);
   }
-  .icon {
+  /*.icon {
     width: calc(var(--vh) * 2);
     height: calc(var(--vh) * 2);
-  }
+  }*/
 }
