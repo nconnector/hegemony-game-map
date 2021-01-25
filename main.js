@@ -1,3 +1,8 @@
+// get the viewport height and multiply it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 const map = document.getElementById('map')
 const mapImg = document.getElementById('map__img')
 const menuMoves = document.getElementById('menu__moves')

@@ -11,6 +11,7 @@
 html {
   height: 100%;
   overflow: hidden;
+  --vh: 0px;
 }
 
 body {
@@ -27,10 +28,7 @@ body {
   min-width: 100%;
   min-height: 100%;
   transition: 1s;
-  touch-action: pinch-zoom;
-  /*
-  background: url("https://psv4.userapi.com/c520036/u467135438/docs/d1/f299cd7fc4fc/karta_12_khod.png");
-  */
+  touch-action: pinch-zoom; /* not supported by safari */
 }
 #map__img {
   cursor: move;
@@ -45,20 +43,21 @@ body {
   grid-gap: 1.5vh;
   grid-template-columns: auto 1.5vh;
   grid-template-rows: auto auto;
-
   position: absolute;
   z-index: 10;
   top: 3vh;
   left: 3vh;
 }
 
-.menu__item,
-.move {
+.button,
+.menu__item {
+  /* menu elements color */
   color: white;
   background-color: rgba(9, 7, 7, 0.7);
 }
 
 #menu__moves {
+  /* all menu sections */
   display: grid;
   grid-auto-flow: column;
   grid-gap: 0.5vh;
@@ -67,11 +66,12 @@ body {
 }
 
 #menu__settings {
+  /* top line of the menu */
   display: grid;
   grid-auto-flow: row;
   grid-gap: 0.5vh;
-  grid-template-columns: 4vh 4vh;
   grid-template-rows: 4vh;
+  grid-template-columns: 4vh 4vh;
 }
 
 #menu__scrollbar {
@@ -81,6 +81,7 @@ body {
 }
 
 .button {
+  /* all small menu tiles */
   padding-top: 30%;
   text-align: center;
   font-family: "crashnumber", monospace;
@@ -99,12 +100,42 @@ body {
   background-color: rgba(129, 191, 254, 0.95);
 }
 
-.move {
+.no-padding {
+  padding: 0;
 }
 
 .icon {
-  width: 1.5vh;
-  height: 1.5vh;
+  /* icon inside the menu tile TODO: change icon */
+  padding: 10%;
+  width: 3vh;
+  height: 3vh;
   -webkit-filter: invert(1);
   filter: invert(1);
+}
+
+@media only screen and (max-width: 768px) {
+  #menu {
+    display: grid;
+    grid-gap: calc(var(--vh) * 1.5);
+    grid-template-columns: auto calc(var(--vh) * 1.5);
+    top: calc(var(--vh) * 3);
+    left: calc(var(--vh) * 3);
+  }
+  #menu__moves {
+    grid-gap: calc(var(--vh) * 0.5);
+    grid-template-rows: repeat(20, calc(var(--vh) * 4));
+    grid-template-columns: calc(var(--vh) * 4) calc(var(--vh) * 4);
+  }
+  #menu__settings {
+    grid-gap: calc(var(--vh) * 0.5);
+    grid-template-rows: calc(var(--vh) * 4);
+    grid-template-columns: calc(var(--vh) * 4) calc(var(--vh) * 4);
+  }
+  .button {
+    font-size: calc(var(--vh) * 1.5);
+  }
+  .icon {
+    width: calc(var(--vh) * 3);
+    height: calc(var(--vh) * 3);
+  }
 }
