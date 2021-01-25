@@ -1,1 +1,1 @@
-https://github.com/nconnector/hegemony-game-map
+https://nconnector.github.io/hegemony-game-map/
