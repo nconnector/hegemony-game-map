@@ -106,9 +106,9 @@ body {
 
 .icon {
   /* icon inside the menu tile TODO: change icon */
-  padding: 10%;
-  width: 3vh;
-  height: 3vh;
+  padding: 25%;
+  width: 2vh;
+  height: 2vh;
   -webkit-filter: invert(1);
   filter: invert(1);
 }
@@ -135,7 +135,7 @@ body {
     font-size: calc(var(--vh) * 1.5);
   }
   .icon {
-    width: calc(var(--vh) * 3);
-    height: calc(var(--vh) * 3);
+    width: calc(var(--vh) * 2);
+    height: calc(var(--vh) * 2);
   }
 }
