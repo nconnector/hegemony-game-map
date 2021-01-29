@@ -1,6 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 @font-face {
@@ -40,7 +46,6 @@ a {
   cursor: move;
   position: relative;
   width: auto;
-  left: -50%;
   height: 100%;
 }
 
@@ -92,12 +97,6 @@ a {
   text-align: center;
   font-family: "crashnumber", monospace;
   font-size: 1.5vh;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
 }
 
 .button.active {
@@ -120,6 +119,9 @@ a {
 }*/
 
 @media only screen and (max-width: 768px) {
+  #map__img {
+    left: -50%;
+  }
   #menu {
     display: grid;
     grid-gap: calc(var(--vh) * 1.5);
