@@ -78,6 +78,7 @@ mapImg.addEventListener('contextmenu', event => event.preventDefault())
 // UI - Buttons
 let moveID = 1
 let moveIDtoURL = {
+    21: 'images/karta_21_khod.png',
     20: 'images/karta_20_khod.png',
     19: 'images/karta_19_khod.png',
     18: 'images/karta_18_khod.png',
