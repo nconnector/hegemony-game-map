@@ -5,7 +5,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 const map = document.getElementById('map')
 const mapImg = document.getElementById('map__img')
-const menuMoves = document.getElementById('menu__moves')
+const menu = document.getElementById('menu')
 
 
 // zoom functionality
@@ -78,6 +78,12 @@ mapImg.addEventListener('contextmenu', event => event.preventDefault())
 // UI - Buttons
 let moveID = 1
 let moveIDtoURL = {
+    21: 'images/karta_21_khod.png',
+    20: 'images/karta_20_khod.png',
+    19: 'images/karta_19_khod.png',
+    18: 'images/karta_18_khod.png',
+    17: 'images/karta_17_khod.png',
+    16: 'images/karta_16_khod.png',
     15: 'images/karta_15_khod.png',
     14: 'images/karta_14_khod.png',
     13: 'images/karta_13_khod.png',
@@ -93,6 +99,7 @@ let moveIDtoURL = {
     3: 'images/Karta_3khod.png',
     2: 'images/Karta_2khod.png',
     1: 'images/Karta_1khod.png',
+    'names': 'images/names.png',
 }
 
 
@@ -111,5 +118,5 @@ function updateURL(event) {
         } 
     }}
 
-menuMoves.addEventListener('touchend', event => { updateURL(event) })
-menuMoves.addEventListener('click', event => { updateURL(event) })
+menu.addEventListener('touchend', event => { updateURL(event) })
+menu.addEventListener('click', event => { updateURL(event) })
