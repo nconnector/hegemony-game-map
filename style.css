@@ -170,9 +170,13 @@ a {
     grid-template-rows: repeat(20, calc(var(--vh) * 4));
     grid-template-columns: calc(var(--vh) * 4) calc(var(--vh) * 4);
   }
+  #menu__moves__full {
+    grid-gap: calc(var(--vh) * 0.5);
+    grid-template-rows: repeat(20, calc(var(--vh) * 4));
+  }
   #menu__settings {
     grid-gap: calc(var(--vh) * 0.5);
-    grid-template-columns: repeat(5, calc(var(--vh) * 4));
+    grid-template-rows: repeat(5, calc(var(--vh) * 4));
     grid-template-columns: calc(var(--vh) * 17.5);
   }
   .button {

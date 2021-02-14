@@ -88,7 +88,7 @@ function getURL(key) {
         'Религия': 'images/religion.jpg',
     }
     if (/^[1-9][0-9]*$/.test(key)) {
-        url = `images/Karta_${key}_khod.png`
+        url = `images/karta_${key}_khod.png`
     }
     else if (keys[key] !== undefined) {
         url = keys[key]
