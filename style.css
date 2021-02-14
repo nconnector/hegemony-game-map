@@ -51,8 +51,8 @@ a {
 
 #menu {
   display: grid;
-  grid-gap: 1.5vh;
-  grid-template-columns: auto 1.5vh;
+  grid-gap: 1.5vh 0.5vh;
+  grid-template-columns: 4vh auto;
   grid-template-rows: auto auto;
   position: absolute;
   z-index: 10;
@@ -61,48 +61,79 @@ a {
 }
 
 .button,
-.menu__item {
+.menu__item,
+.menu__header__item {
   /* menu elements color */
   color: white;
   background-color: rgba(9, 7, 7, 0.7);
 }
 
+#menu__heaeder {
+  /* top line of the menu */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 0.5vh;
+  grid-template-rows: 4vh;
+  grid-template-columns: repeat(5, 4vh);
+}
+
 #menu__moves {
-  /* all menu sections */
+  /* active 20 moves */
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0.5vh;
+  grid-template-rows: repeat(20, 4vh);
+  grid-template-columns: 4vh;
+}
+
+#menu__moves__full {
+  /* all moves */
   display: grid;
   grid-auto-flow: column;
   grid-gap: 0.5vh;
   grid-template-rows: repeat(20, 4vh);
   grid-template-columns: 4vh 4vh;
+  visibility: hidden;
+  position: fixed;
 }
 
 #menu__settings {
-  /* top line of the menu */
+  /* layer options */
   display: grid;
-  grid-auto-flow: row;
+  grid-auto-flow: column;
   grid-gap: 0.5vh;
-  grid-template-rows: 4vh;
-  grid-template-columns: repeat(4, 4vh);
-}
-
-#menu__scrollbar {
+  grid-template-rows: repeat(5, 4vh);
+  grid-template-columns: 17.5vh;
   visibility: hidden;
-  grid-row: 1 / 3;
-  grid-column: 2 / 3;
+  position: fixed;
 }
 
-.button {
+.button,
+.menu__header__item {
   /* all small menu tiles */
-  padding-top: 30%;
+  padding-top: 1.33vh;
   text-align: center;
   font-family: "crashnumber", monospace;
   font-size: 1.5vh;
 }
 
-.button.active {
+.button.active,
+.menu__header__item.active {
+  padding-top: calc(1.33vh - 2px);
   color: rgba(9, 7, 7, 0.7);
   border: 2px solid rgba(9, 7, 7, 0.7);
   background-color: rgba(129, 191, 254, 0.95);
+}
+
+.text{
+  padding-top: 1vh;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+}
+.text.active{
+  padding-top: calc(1vh - 2px);
 }
 
 /*
@@ -124,10 +155,15 @@ a {
   }
   #menu {
     display: grid;
-    grid-gap: calc(var(--vh) * 1.5);
-    grid-template-columns: auto calc(var(--vh) * 1.5);
+    grid-gap: calc(var(--vh) * 1.5) calc(var(--vh) * 0.5);
+    grid-template-columns: calc(var(--vh) * 4) auto;
     top: calc(var(--vh) * 3);
     left: calc(var(--vh) * 3);
+  }
+  #menu__heaeder {
+    grid-gap: calc(var(--vh) * 0.5);
+    grid-template-rows: calc(var(--vh) * 4);
+    grid-template-columns: repeat(5, calc(var(--vh) * 4));
   }
   #menu__moves {
     grid-gap: calc(var(--vh) * 0.5);
@@ -136,8 +172,8 @@ a {
   }
   #menu__settings {
     grid-gap: calc(var(--vh) * 0.5);
-    grid-template-rows: calc(var(--vh) * 4);
-    grid-template-columns: repeat(4, calc(var(--vh) * 4));
+    grid-template-columns: repeat(5, calc(var(--vh) * 4));
+    grid-template-columns: calc(var(--vh) * 17.5);
   }
   .button {
     font-size: calc(var(--vh) * 1.5);

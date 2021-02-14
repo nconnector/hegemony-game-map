@@ -1,53 +1,86 @@
 <html>
     <head>
-        <meta charset='UTF-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Гегемония</title>
-        <link rel='stylesheet' href='style.css' />   
-        <link rel='icon' sizes='any' type='image/svg+xml' href='images/favicon.svg'/>
-      </head>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" sizes="any" type="image/svg+xml" href="images/favicon.svg" />
+    </head>
     <body>
-        <div id='frame'>
-            <div id='menu'>
-                <div id='menu__settings'>
-                    <div class='button move'>names</div>
-                    <div class='button'><a target="_blank" href='https://vk.com/diplomacyvk'>page</a></div>
-                    <div class='button'><a target="_blank" href='https://vk.com/im'>chat</a></div>
-                    <div class='button'><a target="_blank" href='https://github.com/nconnector/hegemony-game-map'>like</a></div>
+        <div id="frame">
+            <div id="menu">
+                <div id="menu__heaeder">
+                    <div class="menu__header__item" data-dropdown="menu__moves__full">Ходы</div>
+                    <div class="menu__header__item" data-dropdown="menu__settings">Слои</div>
+                    <a class="menu__header__item" target="_blank" href="https://vk.com/diplomacyvk">VK</a>
+                    <a class="menu__header__item" target="_blank" href="https://vk.com/im">Чат</a>
+                    <a class="menu__header__item" target="_blank" href="https://github.com/nconnector/hegemony-game-map">Лайк</a>
                 </div>
-                <div id='menu__moves'>
-                    <div class='button move active'>1</div>
-                    <div class='button move'>2</div>
-                    <div class='button move'>3</div>
-                    <div class='button move'>4</div>
-                    <div class='button move'>5</div>
-                    <div class='button move'>6</div>
-                    <div class='button move'>7</div>
-                    <div class='button move'>8</div>
-                    <div class='button move'>9</div>
-                    <div class='button move'>10</div>
-                    <div class='button move'>11</div>
-                    <div class='button move'>12</div>
-                    <div class='button move'>13</div>
-                    <div class='button move'>14</div>
-                    <div class='button move'>15</div>
-                    <div class='button move'>16</div>
-                    <div class='button move'>17</div>
-                    <div class='button move'>18</div>
-                    <div class='button move'>19</div>
-                    <div class='button move'>20</div>
+                <div id="menu__moves">
+                    <div class="button image active">1</div>
+                    <div class="button image">2</div>
+                    <div class="button image">3</div>
+                    <div class="button image">4</div>
+                    <div class="button image">5</div>
+                    <div class="button image">6</div>
+                    <div class="button image">7</div>
+                    <div class="button image">8</div>
+                    <div class="button image">9</div>
+                    <div class="button image">10</div>
+                    <div class="button image">11</div>
+                    <div class="button image">12</div>
+                    <div class="button image">13</div>
+                    <div class="button image">14</div>
+                    <div class="button image">15</div>
+                    <div class="button image">16</div>
+                    <div class="button image">17</div>
+                    <div class="button image">18</div>
+                    <div class="button image">19</div>
+                    <div class="button image">20</div>
                 </div>
-                <div id='menu__scrollbar' class='menu__item'></div>
+                <div class="dropdown">
+                    <div class="dropdown__item" id="menu__moves__full">
+                        <div class="button image">21</div>
+                        <div class="button image">22</div>
+                        <div class="button image">23</div>
+                        <div class="button image">24</div>
+                        <div class="button image">25</div>
+                        <div class="button image">26</div>
+                        <div class="button image">27</div>
+                        <div class="button image">28</div>
+                        <div class="button image">29</div>
+                        <div class="button image">30</div>
+                        <div class="button image">31</div>
+                        <div class="button image">32</div>
+                        <div class="button image">33</div>
+                        <div class="button image">34</div>
+                        <div class="button image">35</div>
+                        <div class="button image">36</div>
+                        <div class="button image">37</div>
+                        <div class="button image">38</div>
+                        <div class="button image">39</div>
+                        <div class="button image">40</div>
+                    </div>
+                    <div class="dropdown__item" id="menu__settings">
+                        <div class="button image text">Правители</div>
+                        <div class="button image text">Ресурсы</div>
+                        <div class="button image text">Климат</div>
+                        <div class="button image text">Этнос</div>
+                        <div class="button image text">Религия</div>
+                    </div>
+                </div>
             </div>
-            <div id='map'><img draggable="false" id='map__img' src='images/karta_14_khod.png'></div>
+            <div id="map"><img draggable="false" id="map__img" src="images/karta_14_khod.png" /></div>
         </div>
-        <script type='text/javascript' src='main.js'></script>
+        <script type="text/javascript" src="main.js"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2LJZJGGGY"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-J2LJZJGGGY');
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-J2LJZJGGGY");
         </script>
     </body>
 </html>

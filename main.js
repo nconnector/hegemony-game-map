@@ -77,46 +77,71 @@ mapImg.addEventListener('contextmenu', event => event.preventDefault())
 
 // UI - Buttons
 let moveID = 1
-let moveIDtoURL = {
-    21: 'images/karta_21_khod.png',
-    20: 'images/karta_20_khod.png',
-    19: 'images/karta_19_khod.png',
-    18: 'images/karta_18_khod.png',
-    17: 'images/karta_17_khod.png',
-    16: 'images/karta_16_khod.png',
-    15: 'images/karta_15_khod.png',
-    14: 'images/karta_14_khod.png',
-    13: 'images/karta_13_khod.png',
-    12: 'images/karta_12_khod.png',
-    11: 'images/Karta_11khod.png',
-    10: 'images/Karta_10khod.png',
-    9: 'images/Karta_9khod.png',
-    8: 'images/Karta_8khod.png',
-    7: 'images/Karta_7khod.png',
-    6: 'images/Karta_6khod.png',
-    5: 'images/Karta_5khod.png',
-    4: 'images/Karta_4khod.png',
-    3: 'images/Karta_3khod.png',
-    2: 'images/Karta_2khod.png',
-    1: 'images/Karta_1khod.png',
-    'names': 'images/names.png',
+
+function getURL(key) {
+    let url = ''
+    let keys = {
+        'Правители': 'images/names.png',
+        'Ресурсы': 'images/resources.jpg',
+        'Климат': 'images/climate.jpg',
+        'Этнос': 'images/ethnicity.jpg',
+        'Религия': 'images/religion.jpg',
+    }
+    if (/^[1-9][0-9]*$/.test(key)) {
+        url = `images/Karta_${key}_khod.png`
+    }
+    else if (keys[key] !== undefined) {
+        url = keys[key]
+    }
+    return url
 }
 
-
 function updateURL(event) {
-    if (event.target.classList.contains('move')) {
+    if (event.target.classList.contains('image')) {
         moveID = event.target.innerText
-        let newURL = moveIDtoURL[moveID]
+        let newURL = getURL(moveID)
         if (newURL) {
             mapImg.src = newURL
-            document.getElementsByClassName('button active')[0].classList.remove('active')
+            document.querySelector('.button.active').classList.remove('active')
             event.target.classList.add('active')
             event.stopPropagation()
             event.preventDefault()
         } else {
             mapImg.src = ''
         } 
-    }}
+    }
+
+    else if (event.target.classList.contains('menu__header__item')) {
+        // remove active class from former active header item
+        const activeMenuHeader = document.querySelector('.menu__header__item.active')
+        const activeDropdownItem = document.querySelector('.dropdown__item.active')
+        if (activeMenuHeader) {
+            activeMenuHeader.classList.remove('active')
+            if (activeDropdownItem) {
+                activeDropdownItem.classList.remove('active')
+                activeDropdownItem.style.visibility = 'hidden'
+            }
+        }
+        // add active class to new active header item based on value
+        console.log(`past active = ${activeMenuHeader}`)
+        console.log(`new  active = ${event.target}`)
+        if (activeMenuHeader !== event.target) {
+            event.target.classList.add('active')
+            const itemId = event.target.dataset.dropdown
+            if (itemId) {
+                const dropdownMenuItem = document.querySelector(`#${itemId}`)
+                dropdownMenuItem.style.visibility = 'visible'
+                dropdownMenuItem.classList.add('active')
+                event.stopPropagation()
+                event.preventDefault()
+            }
+            else {
+                // timeout 0.5 sec remove active status from header item
+                setTimeout( () => event.target.classList.remove('active'), 500)
+            }
+        }
+    }
+}
 
 menu.addEventListener('touchend', event => { updateURL(event) })
 menu.addEventListener('click', event => { updateURL(event) })
