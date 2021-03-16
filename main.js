@@ -149,7 +149,7 @@ function updateURL(event) {
                 activeDropdownItem.classList.remove('active')
                 activeDropdownItem.style.visibility = 'hidden'
             }
-            if (itemId == 'menu__moves__full') {
+            if (activeMenuHeader.dataset.dropdown == 'menu__moves__full') {
                 // if moves__full disabled, enable moves__default 
                 moves_default.style.visibility = 'visible'
             }
