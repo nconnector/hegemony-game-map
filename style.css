@@ -97,6 +97,7 @@ a {
   grid-template-columns: 4vh 4vh;
   visibility: hidden;
   position: fixed;
+  transform: translate(-4.5vh);
 }
 
 #menu__settings {
