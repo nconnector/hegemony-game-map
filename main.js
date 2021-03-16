@@ -6,6 +6,31 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 const map = document.getElementById('map')
 const mapImg = document.getElementById('map__img')
 const menu = document.getElementById('menu')
+const moves_default = document.getElementById('menu__moves')
+const moves_dropdown = document.getElementById('menu__moves__full')
+
+
+// set starting layout 
+const latest_move = 22 // TODO!!
+mapImg.setAttribute('src', getURL(latest_move))
+
+const moves_per_column = 20
+const max_moves = 60
+for (i=0; i < max_moves; i++) {
+    let div = document.createElement('div')
+    div.className = i+1==latest_move ? 'button image active' : 'button image'
+    div.innerText = i+1
+    div.setAttribute('data-id', i+1)
+    moves_dropdown.append(div)
+    // only last column is appended to default moves 
+    if (i >= moves_per_column) {
+        let div2 = document.createElement('div')
+        div2.className = i+1==latest_move ? 'button image active' : 'button image'
+        div2.innerText = i+1
+        div2.setAttribute('data-id', i+1)
+        moves_default.append(div2)
+    }
+}
 
 
 // zoom functionality
@@ -102,8 +127,9 @@ function updateURL(event) {
         let newURL = getURL(moveID)
         if (newURL) {
             mapImg.src = newURL
-            document.querySelector('.button.active').classList.remove('active')
-            event.target.classList.add('active')
+            document.querySelectorAll('.button.active').forEach(item => item.classList.remove('active'))
+            //event.target.classList.add('active')
+            document.querySelectorAll(`.button.image[data-id="${moveID}"]`).forEach(item => item.classList.add('active'))
             event.stopPropagation()
             event.preventDefault()
         } else {
@@ -115,11 +141,17 @@ function updateURL(event) {
         // remove active class from former active header item
         const activeMenuHeader = document.querySelector('.menu__header__item.active')
         const activeDropdownItem = document.querySelector('.dropdown__item.active')
+        const itemId = event.target.dataset.dropdown
+
         if (activeMenuHeader) {
             activeMenuHeader.classList.remove('active')
             if (activeDropdownItem) {
                 activeDropdownItem.classList.remove('active')
                 activeDropdownItem.style.visibility = 'hidden'
+            }
+            if (itemId == 'menu__moves__full') {
+                // if moves__full disabled, enable moves__default 
+                moves_default.style.visibility = 'visible'
             }
         }
         // add active class to new active header item based on value
@@ -127,11 +159,14 @@ function updateURL(event) {
         console.log(`new  active = ${event.target}`)
         if (activeMenuHeader !== event.target) {
             event.target.classList.add('active')
-            const itemId = event.target.dataset.dropdown
             if (itemId) {
                 const dropdownMenuItem = document.querySelector(`#${itemId}`)
                 dropdownMenuItem.style.visibility = 'visible'
                 dropdownMenuItem.classList.add('active')
+                if (itemId == 'menu__moves__full') {
+                    // if moves__full enabled, disable moves__default 
+                    moves_default.style.visibility = 'hidden'
+                }
                 event.stopPropagation()
                 event.preventDefault()
             }
