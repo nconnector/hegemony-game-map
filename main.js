@@ -15,7 +15,7 @@ const latest_move = 22 // TODO!!
 mapImg.setAttribute('src', getURL(latest_move))
 
 const moves_per_column = 20
-const max_moves = 60
+const max_moves = 40
 for (i=0; i < max_moves; i++) {
     let div = document.createElement('div')
     div.className = i+1==latest_move ? 'button image active' : 'button image'
@@ -23,7 +23,7 @@ for (i=0; i < max_moves; i++) {
     div.setAttribute('data-id', i+1)
     moves_dropdown.append(div)
     // only last column is appended to default moves 
-    if (i >= moves_per_column) {
+    if (i >= max_moves - moves_per_column) {
         let div2 = document.createElement('div')
         div2.className = i+1==latest_move ? 'button image active' : 'button image'
         div2.innerText = i+1
