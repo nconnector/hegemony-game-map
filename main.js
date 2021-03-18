@@ -110,7 +110,7 @@ function getURL(key) {
         'Ресурсы': 'images/resources.jpg',
         'Климат': 'images/climate.jpg',
         'Этнос': 'images/ethnicity.jpg',
-        'Религия': 'images/religion.jpg',
+        'Религия': 'images/religion.png',
     }
     if (/^[1-9][0-9]*$/.test(key)) {
         url = `images/karta_${key}_khod.png`
