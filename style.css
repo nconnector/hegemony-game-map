@@ -58,6 +58,7 @@ a {
   z-index: 10;
   top: 3vh;
   left: 3vh;
+  pointer-events: none;
 }
 
 .button,
@@ -94,7 +95,7 @@ a {
   grid-auto-flow: column;
   grid-gap: 0.5vh;
   grid-template-rows: repeat(20, 4vh);
-  grid-template-columns: 4vh 4vh;
+  grid-template-columns: 4vh 4vh 4vh 4vh 4vh;
   visibility: hidden;
   position: fixed;
   transform: translate(-4.5vh);
@@ -118,6 +119,7 @@ a {
   text-align: center;
   font-family: "crashnumber", monospace;
   font-size: 1.5vh;
+  pointer-events: auto;
 }
 
 .button.active,
