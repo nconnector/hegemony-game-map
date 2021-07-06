@@ -16,18 +16,18 @@ mapImg.setAttribute('src', getURL(latest_move))
 
 const moves_per_column = 20
 const max_moves = 40
-for (i=0; i < max_moves; i++) {
+for (i = 0; i < max_moves; i++) {
     let div = document.createElement('div')
-    div.className = i+1==latest_move ? 'button image active' : 'button image'
-    div.innerText = i+1
-    div.setAttribute('data-id', i+1)
+    div.className = i + 1 == latest_move ? 'button image active' : 'button image'
+    div.innerText = i + 1
+    div.setAttribute('data-id', i + 1)
     moves_dropdown.append(div)
     // only last column is appended to default moves 
     if (i >= max_moves - moves_per_column) {
         let div2 = document.createElement('div')
-        div2.className = i+1==latest_move ? 'button image active' : 'button image'
-        div2.innerText = i+1
-        div2.setAttribute('data-id', i+1)
+        div2.className = i + 1 == latest_move ? 'button image active' : 'button image'
+        div2.innerText = i + 1
+        div2.setAttribute('data-id', i + 1)
         moves_default.append(div2)
     }
 }
@@ -41,7 +41,7 @@ function zoom(event) {
     scale = Math.min(Math.max(0.5, scale), 4)
     // Apply scale transform
     map.style.transform = `scale(${scale})`
-  }
+}
 
 
 // Pan Functionality
@@ -78,13 +78,13 @@ function while_drag(event) {
     }
     if (img_ele !== null) {
         img_ele.style.left = (x_cursor - x_img_ele) + 'px'
-        img_ele.style.top = ( y_cursor - y_img_ele) + 'px'
+        img_ele.style.top = (y_cursor - y_img_ele) + 'px'
         //track movement in console
         //console.log(img_ele.style.left+' - '+img_ele.style.top)
 
     }
 }
-  
+
 // enable pan
 mapImg.addEventListener('mousedown', start_drag)
 map.addEventListener('mousemove', while_drag)
@@ -134,7 +134,7 @@ function updateURL(event) {
             event.preventDefault()
         } else {
             mapImg.src = ''
-        } 
+        }
     }
 
     else if (event.target.classList.contains('menu__header__item')) {
@@ -172,7 +172,7 @@ function updateURL(event) {
             }
             else {
                 // timeout 0.5 sec remove active status from header item
-                setTimeout( () => event.target.classList.remove('active'), 500)
+                setTimeout(() => event.target.classList.remove('active'), 500)
             }
         }
     }
