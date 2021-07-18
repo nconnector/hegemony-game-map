@@ -11,11 +11,11 @@ const moves_dropdown = document.getElementById('menu__moves__full')
 
 
 // set starting layout 
-const latest_move = 22 // TODO!!
+const latest_move = 41 // TODO!!
 mapImg.setAttribute('src', getURL(latest_move))
 
 const moves_per_column = 20
-const max_moves = 40
+const max_moves = 60
 for (i = 0; i < max_moves; i++) {
     let div = document.createElement('div')
     div.className = i + 1 == latest_move ? 'button image active' : 'button image'
